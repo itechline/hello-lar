@@ -10,154 +10,90 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="lar.com.lookaround.MainActivity"
+    android:background="#ededed"
     tools:showIn="@layout/activity_main">
 
 
-    <RadioGroup
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignBottom="@+id/textView"
-        android:id="@+id/radioGroup">
+        android:layout_marginTop="50sp"
+        android:layout_marginBottom="50sp"
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"
+        android:paddingRight="15sp"
+        android:paddingLeft="15sp"
+        android:paddingTop="15sp"
+        android:background="#ffffff">
 
-        <RadioButton
+
+        <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ingatlaniroda"
-            android:id="@+id/radioButton"
-            android:layout_alignParentTop="true"
+            android:id="@+id/username"
+            android:maxLength="13"
+            android:minWidth="300sp"
+            android:singleLine="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:hint="Felhasználónév"
+            android:layout_alignParentEnd="true"
+            />
 
-        <RadioButton
+        <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Magánszeméy"
-            android:id="@+id/radioButton2"
-            android:layout_gravity="right"
-            android:layout_alignTop="@+id/radioButton"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:id="@+id/vezeteknev"
+            android:maxLength="13"
+            android:text=""
+            android:minWidth="300sp"
+            android:singleLine="true"
+            android:hint="Vezetéknév"
+            android:layout_below="@+id/username"
+            android:layout_alignLeft="@+id/username"
+            android:layout_alignStart="@+id/username" />
 
-    </RadioGroup>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/keresztnev"
+            android:maxLength="13"
+            android:minWidth="300sp"
+            android:text=""
+            android:hint="Keresztnév"
+            android:layout_below="@+id/vezeteknev" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Felhasználónév:"
-        android:id="@+id/textView"
-        android:layout_marginTop="104dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/editText4"
+            android:layout_below="@+id/keresztnev"
+            android:layout_alignLeft="@+id/keresztnev"
+            android:layout_alignStart="@+id/keresztnev"
+            android:hint="Email" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText"
-        android:text=""
-        android:maxLength="13"
-        android:minWidth="300sp"
-        android:layout_alignTop="@+id/textView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Regisztráció"
+            android:id="@+id/button"
+            android:layout_below="@+id/editText4"
+            android:layout_marginTop="10sp"
+            android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Vezetéknév:"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/editText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText2"
-        android:maxLength="13"
-        android:text=""
-        android:minWidth="300sp"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_alignRight="@+id/editText3"
-        android:layout_alignEnd="@+id/editText3" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Keresztnév:"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/editText2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText3"
-        android:maxLength="13"
-        android:minWidth="300sp"
-        android:text=""
-        android:layout_below="@+id/editText2"
-        android:layout_alignRight="@+id/radioGroup"
-        android:layout_alignEnd="@+id/radioGroup" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email:"
-        android:id="@+id/textView4"
-        android:layout_below="@+id/editText3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/editText4"
-        android:layout_below="@+id/editText3"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_alignStart="@+id/editText3"
-        android:text="email@asd.com" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Regisztráció"
-        android:id="@+id/button"
-        android:layout_below="@+id/editText4"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="A “REGISZTRÁLOK” gomb megnyomásával elfogadja a    Felhasználói feltételeket."
-        android:id="@+id/textView5"
-        android:layout_below="@+id/button"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Már van fiókja?"
-        android:id="@+id/textView6"
-        android:layout_marginTop="53dp"
-        android:layout_below="@+id/textView5"
-        android:layout_toLeftOf="@+id/editText4"
-        android:layout_toStartOf="@+id/editText4" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="showAlert"
-        android:text="Bejelentkezés"
-        android:id="@+id/button2"
-        android:layout_alignBottom="@+id/textView6"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button" />
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="showAlert"
+            android:text="Bejelentkezés"
+            android:id="@+id/button2"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/button"
+            android:layout_alignStart="@+id/button"
+            android:layout_marginBottom="81dp" />
+    </RelativeLayout>
 
 </RelativeLayout>

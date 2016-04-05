@@ -8,10 +8,12 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                //showAlert(view);
             }
         });
     }
@@ -56,22 +59,24 @@ public class MainActivity extends AppCompatActivity {
 
     public void showAlert(View view) {
         AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
-        myAlert.setMessage("lofax")
-                .setPositiveButton("Belépés", new DialogInterface.OnClickListener() {
+        myAlert.setMessage("Rossz felhasználónév vagy jelszó!")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        EditText abc = (EditText)findViewById(R.id.username);
+                        abc.getText().toString();
+                        Log.d("DEBUG: ", abc.getText().toString());
+                       // dialog.dismiss();
+                    }
+                })
+                /*.setNegativeButton("Mégse", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                     }
-                })
-                .setNegativeButton("Mégse", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                })
+                })*/
 
-                .setTitle("Bejelentkezés")
-
+                .setTitle("HIBA")
                 .create();
         myAlert.show();
     }
