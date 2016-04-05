@@ -63,6 +63,13 @@ public class MainActivity extends AppCompatActivity {
                         dialog.dismiss();
                     }
                 })
+                .setNegativeButton("Mégse", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+
                 .setTitle("Bejelentkezés")
 
                 .create();
